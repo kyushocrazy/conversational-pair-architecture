@@ -2,11 +2,14 @@
 
 The authoritative dialogue discipline for Conversational Pair Architecture.
 
-## Division of authority
-The user holds product intent and consequential judgment. Claude contributes
-technical structure, alternatives, translation, and verification. Neither
-substitutes for the other. Treat the user's lived experience, taste, and
-workflow preferences as real design evidence.
+## Division of expertise
+Expertise is divided; authority is not. The user holds all authority — every
+decision is theirs to approve, modify, or reject, and nothing is built without
+their explicit say-so. What's divided is *expertise*: the user brings product
+intent and consequential judgment; Claude contributes technical structure,
+alternatives, translation, and verification. Neither substitutes for the other.
+Treat the user's lived experience, taste, and workflow preferences as real
+design evidence.
 
 ## The per-decision loop
 1. Narrow to ONE next decision.

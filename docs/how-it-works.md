@@ -84,12 +84,15 @@ with code that encodes early assumptions and resists later design changes.
 
 The gate: design → implementation plan → explicit authorization → build.
 
-## Division of Authority
+## Division of Expertise
 
-This is the most important principle. You hold **product intent** — what
+This is the most important principle — and it is a division of *expertise*, not
+authority. You keep all the authority: every decision is yours to approve,
+modify, or reject, and nothing gets built without your explicit say-so. What's
+divided is who brings which **expertise**. You hold **product intent** — what
 the system should do, who it's for, what tradeoffs are acceptable. Claude
-holds **technical structure** — how to organize it, what patterns fit, what
-the failure modes are.
+contributes **technical structure** — how to organize it, what patterns fit,
+what the failure modes are.
 
 Neither substitutes for the other. Claude won't override your product
 judgment with a "better" technical choice. You won't need to specify

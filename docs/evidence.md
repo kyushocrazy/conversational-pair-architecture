@@ -101,7 +101,11 @@ Round 1 could only argue the mechanism; round 2 executed it.
 Numbers aside, the clearest difference between the two arms shows up in *who
 decides what.*
 
-### 1. Division of authority
+### 1. Division of expertise (you keep the authority)
+
+A note on the name: the human keeps *all* the authority here — every decision is
+theirs to approve, modify, or reject. What differs between the two arms is how
+each respects the **expertise boundary**: whose call a given decision actually is.
 
 In both rounds the one-shot quietly seized decisions that belong to the human:
 
