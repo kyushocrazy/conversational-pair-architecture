@@ -1,0 +1,14 @@
+{
+  "_comment": "Map projects to living-file directories. Set cross_device: true for repos accessible from multiple machines. Falls back to 'sessions/' in the current project if no match.",
+  "default": "sessions/",
+  "registry": {
+    "my-saas-app": {
+      "path": "/path/to/my-saas-app/docs/co-architect/sessions",
+      "cross_device": true
+    },
+    "internal-tool": {
+      "path": "/path/to/internal-tool/design/sessions",
+      "cross_device": false
+    }
+  }
+}

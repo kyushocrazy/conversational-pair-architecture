@@ -1,0 +1,13 @@
+# User-specific config — register your own project homes here; never commit it
+skill/references/homes.json
+
+# Session working files — these are yours, not the skill's
+sessions/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.idea/
+.vscode/
