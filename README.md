@@ -231,6 +231,14 @@ conversational-pair-architecture/
 └── README.md
 ```
 
+## Works Beyond Claude Code
+
+Co-Architect is *packaged* as a Claude Code skill, but **Conversational Pair Architecture is a methodology, not a tool feature.** The per-decision loop, canonical principles, and living session file are simply a way of working — they apply to any capable AI coding assistant.
+
+In fact, the approach didn't start in Claude Code. It first emerged in hands-on sessions with **OpenAI Codex** — the one-decision-at-a-time design rhythm took shape there in real use, and this skill is the formalized, repeatable version of it. The discipline has held up in both: if you work in Codex (or another assistant), you can run the same workflow by following the [interaction contract](skill/references/interaction-contract.md) directly. A native Codex (`AGENTS.md`) port is on the roadmap.
+
+> Note: the [A/B evidence](docs/evidence.md) was measured on Claude Code specifically — those numbers describe the Claude runs. The *method's* effectiveness in Codex comes from where it was born: direct, repeated practice.
+
 ## Contributing
 
 Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
@@ -241,4 +249,4 @@ MIT — see [LICENSE](LICENSE) for details.
 
 ## Credits
 
-Co-Architect was developed as a [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill. It encodes a design methodology refined through real-world use across construction tech, SaaS, and developer tooling projects.
+Co-Architect is packaged as a [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill. The methodology first emerged in hands-on sessions with OpenAI Codex, then was codified here — refined through real-world use across construction tech, SaaS, and developer tooling projects.
