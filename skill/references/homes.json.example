@@ -1,10 +1,11 @@
 {
-  "_comment": "Map projects to living-file directories. Set cross_device: true for repos accessible from multiple machines. Falls back to 'sessions/' in the current project if no match.",
+  "_comment": "Map projects to living-file directories. `path` is where the LIVING FILE lives; set cross_device: true for repos reachable from multiple machines. Falls back to 'sessions/' in the current project if no match. `spec_destination` is where the FINISHED spec is routed at handoff — it is not a living-file home and does not need cross_device.",
   "default": "sessions/",
   "registry": {
     "my-saas-app": {
       "path": "/path/to/my-saas-app/docs/co-architect/sessions",
-      "cross_device": true
+      "cross_device": true,
+      "spec_destination": "/path/to/my-saas-app/docs/specs"
     },
     "internal-tool": {
       "path": "/path/to/internal-tool/design/sessions",

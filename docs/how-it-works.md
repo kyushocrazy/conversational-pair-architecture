@@ -25,6 +25,20 @@ most important open question and focuses the entire turn on it. This keeps
 each interaction small enough to reason about carefully — especially
 important on mobile, where long messages are hard to read and respond to.
 
+The turn has a fixed shape, not just a fixed topic:
+
+```
+DECISION        one line — what we are deciding right now
+RECOMMENDATION  one line — what I would do
+WHY             ≤3 lines — the real tradeoff, plain language
+▶ YOUR CALL     approve / modify / challenge
+```
+
+Reasoning, verification, and tool narration do not appear in the turn — they go in the living
+file. The chat is your surface; the file is Claude's. And any turn that reports finished work
+ends in a checkpoint block whose `YOURS` list is the *only* place your action items appear, so
+they can't get buried in narration.
+
 ### Recommendation-First
 
 Claude doesn't ask open-ended questions like "how should we handle auth?"
@@ -52,10 +66,19 @@ This matters because:
 
 All state lives in a Markdown file, not in the chat. The file has a
 structured format:
-- **Decisions Locked** — numbered list with canonical principles
+- **Grounding** — verified facts and probe results, kept separate from decisions
+- **Decisions Locked** — numbered list with canonical principles, ≤8 lines each
 - **Next Decision** — the single open question (resume point)
+- **Open Conflicts** — contradictions found and not yet resolved ("none" is required when empty)
 - **Current Spec** — the accumulating design document
-- **Audit Log** — periodic consistency check results
+- **Absorbed** — your concepts, formalized rather than just acknowledged
+- **Audit Log** — periodic consistency check results, one verdict per item
+- **Reasoning Appendix** — rationale and rejected options, below the resume line
+
+The last one matters more than it looks. **Resume reads only the top of the file** —
+frontmatter, locked decisions, the next decision, open conflicts, and unresolved audit
+findings. Everything else sits below an explicit resume line and is never reloaded. That is
+what keeps resume cheap as the design grows.
 
 This means:
 - Sessions survive context window limits
@@ -72,6 +95,13 @@ Every ~5 decisions, Claude runs a systematic audit:
 - **Hidden assumptions** — what are we taking for granted?
 - **Unsafe defaults** — what fails dangerously if unconfigured?
 - **Unhandled failure states** — what breaks and what happens when it does?
+- **Decisions contradicted by evidence gathered since** — the amendment trigger
+- **Decisions never verified against reality**
+
+Each item gets an explicit verdict: **CLEAR / FINDING / CAN'T TELL**. `CAN'T TELL` is a
+first-class answer — "no contradictions found" is a positive claim, and it is only honest if
+the check was actually possible. An all-CLEAR audit with no `CAN'T TELL` is treated as a
+finding in itself.
 
 Audits catch problems early, before they're baked into implementation.
 

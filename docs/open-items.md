@@ -12,13 +12,13 @@ The public `evidence.md` is Claude-centric. We owe a Codex complement:
 - Usage efficiency data (within-session tokens, resume cost)
 - A/B comparisons similar to what we ran on Claude
 
-Format doesn't need to be a dissertation — Josh's framing: loose A/B across one of his active projects, maybe a screen-record. README already names this as on the roadmap. When ready, fold into `docs/evidence.md` or add a `docs/evidence-codex.md`.
+Format doesn't need to be a dissertation — the framing we have in mind: a loose A/B across one of our own active projects, maybe a screen-record. README already names this as on the roadmap. When ready, fold into `docs/evidence.md` or add a `docs/evidence-codex.md`.
 
 ---
 
 ## Skills dependency audit
 
-CPA was built and tested on Josh's setup, which has a large installed set of Claude Code skills and MCP tools. The co-architect skill may call — or implicitly assume — skills/tools that a fresh install won't have.
+CPA was built and tested on one developer's setup, which has a large installed set of Claude Code skills and MCP tools. The co-architect skill may call — or implicitly assume — skills/tools that a fresh install won't have.
 
 Questions to answer before calling this production-ready for outside users:
 

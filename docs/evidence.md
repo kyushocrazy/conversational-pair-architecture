@@ -183,3 +183,59 @@ instead of the shared one the resume flow reads from. The work didn't disappear
 cleanup. The skill now carries an explicit **branch guard** in its continuity
 rules to prevent it. The dialogue format is what made the failure visible enough
 to fix.
+
+---
+
+## Update, 2026-08-12 — the flat-resume claim degraded under real use
+
+Honesty cuts both ways, twice. The headline above ("**roughly flat** no matter how long the
+dialogue ran", ~3,100 tokens) held for the two study rounds. It stopped holding in production.
+
+Seven weeks and 31 sessions later, the four largest living files were measured with the same
+char/4 method used above:
+
+| Session | Decisions locked | Bytes | ≈ tokens | vs. the ~3,100 claim |
+|---|---|---|---|---|
+| A | 18 | 53,417 | ~13,354 | 4.3× |
+| B | 9 | 48,991 | ~12,248 | 4.0× |
+| C | 9 | 41,205 | ~10,301 | 3.3× |
+| D | 13 | 30,755 | ~7,689 | 2.5× |
+
+**It was not flat. It scaled with decision count — and worse, with per-decision verbosity.**
+Sessions B and C locked the same number of decisions and differ by 19% in size. In C, nine
+locked decisions consumed 317 lines — about 35 lines each, against a template that implied
+roughly one.
+
+### What actually went wrong
+
+Not the mechanism — the *budget*. The living file had a structure but no size discipline, and
+nothing below a "resume line", so every word of rationale ever written sat in the region a
+resume has to reload. The skill's dialogue rules ("concise by default", "one decision per
+turn") were adjectives, and adjectives lose to a model's own pull toward finishing
+comprehensively.
+
+### The fix
+
+The dialogue discipline was made structural rather than advisory:
+
+- A locked decision is **≤8 lines**. Overflow rationale moves to a `## Reasoning Appendix` at
+  the bottom of the file.
+- An explicit **resume line**: resume reads frontmatter, locked decisions, the next decision,
+  open conflicts, and unresolved audit findings — and nothing below the marker.
+- The chat turn gained a **fixed shape** with a hard line budget and an exclusion list, so
+  reasoning lands in the file rather than in the conversation.
+
+Nothing is deleted; detail moves below the resume line. This restores flat resume cost by
+construction rather than by good intentions.
+
+### What we are not claiming
+
+We have **not** re-run the A/B study, and the corrected numbers above are a measurement of
+real use, not a controlled experiment. Treat the original round-1/round-2 figures as what they
+were — a clean two-round comparison — and treat this as what it is: seven weeks of production
+showing the claim needed a mechanism behind it, and getting one.
+
+The resume-cost argument survives. Even at 13,354 tokens, the largest living file beats
+carrying a full multi-day transcript. But the honest ratio for a long-running session is closer
+to **~1.5–6×** than the ~7–10× quoted from the study rounds, and the flat-cost claim only holds
+going forward, with the budget enforced.

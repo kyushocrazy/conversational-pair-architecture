@@ -11,8 +11,13 @@ A Claude Code skill that turns software design into a structured, one-decision-a
 
 > **Does it actually work?** We ran two small A/B studies (CPA vs. a one-shot
 > "give me the architecture" prompt). The dialogue produced smaller, better-owned
-> artifacts, caught real errors the one-shot missed, and was ~7–10× cheaper to
+> artifacts, caught real errors the one-shot missed, and was substantially cheaper to
 > resume. Honest numbers and caveats in **[docs/evidence.md](docs/evidence.md)**.
+
+*(The original study measured ~7–10× on two controlled rounds. Seven weeks of production use
+showed the living file grows with decision count unless budgeted — see the
+[2026-08-12 update](docs/evidence.md#update-2026-08-12--the-flat-resume-claim-degraded-under-real-use)
+for the measured figures and the structural fix.)*
 
 ---
 
